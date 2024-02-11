@@ -1,0 +1,17 @@
+<h2>Course List</h2>
+
+<!-- Display courses fetched from the backend -->
+<ul *ngIf="courses && courses.length">
+  <li *ngFor="let course of courses">
+    {{ course.courseCode }} - {{ course.title }} ({{ course.credits }} credits)
+  </li>
+</ul>
+
+<!-- Show a message if no courses are available -->
+<div *ngIf="courses && courses.length === 0">No courses available</div>
+
+<!-- Show loading message while fetching courses -->
+<div *ngIf="loading">Loading courses...</div>
+
+<!-- Show error message if course fetching fails -->
+<div *ngIf="error">{{ error }}</div>
