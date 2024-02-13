@@ -1,0 +1,62 @@
+<header class="main-header">
+
+  <div class="logo">
+    <h1>Course Manager</h1>
+  </div>
+  <nav id="menu" class="main-nav" role="navigation">
+    <ul class="main-menu">
+      <li class="has-submenu"><i class="fa fa-user" aria-hidden="true"></i><a > <span class = "userName">{{username}}</span> </a>
+        <ul class="sub-menu" >
+          <li><a routerLink='not-assign-yet' fragment='not-assign'>Profile</a></li>
+          <li><a routerLink='login' (click)= "logOut()">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <div class="{{sidebarOpened ? 'show-sidebar sidebar': 'sidebar'}}">
+    <img src="assets/images/hamburger.svg" alt="<"  class="hamburger" (click)="toggleSidebar()">
+    <div class="{{sidebarOpened ? 'sidebar-wrapper show-sidebar-wrapper': 'sidebar-wrapper'}}">
+      <div>
+
+        <nav class="left-nav" role="navigation">
+          <ul class= "left-menu">
+            <li ><a routerLink="board"><span class="material-icons icon-style">dashboard</span>Dashboard</a></li>
+          </ul>
+          <ul class= "left-menu" >
+            <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>Student</a>
+              <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
+                <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">person_add</span>add new student</a></li>
+                <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">edit</span>update student</a></li>
+                <li><a routerLink='pending-teachers'><span class='material-icons icon-style sub-icon'>visibility</span>view a Student</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class= "left-menu" >
+            <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li3 = !li3"><span class='material-icons icon-style'>school</span>Course</a>
+              <ul class="{{li3 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
+                <li><a routerLink='my-courses' fragment='not-assign'><span class='material-icons icon-style sub-icon'>checklist</span>All Courses</a></li>
+                <li><a routerLink='add-course'><span class='material-icons icon-style sub-icon'>playlist_add</span>Add course</a></li>
+                <li><a routerLink='add-course'><span class='material-icons icon-style sub-icon'>production_quantity_limits</span>course Limt</a></li>
+                <li><a routerLink='add-course'><span class='material-icons icon-style sub-icon'>assignment_ind</span>Assign course</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+  <div class=" {{sidebarOpened ? 'no-padding right-body': 'right-body'}}">
+    <router-outlet></router-outlet>
+  </div>
+
+  <img src="assets/images/hamburger.svg" alt="<" class= "{{sidebarOpened ? 'show-damburger damburger': ' damburger'}}" (click)="toggleSidebar()">
+
+
+
+</div>
+
+<!--<img class="img-responsive-warning" src = "assets/images/warning.png" alt="">-->

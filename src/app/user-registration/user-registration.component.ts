@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  registerForm: FormGroup;
+  registerForm: any;
 
   constructor(private fb: FormBuilder) { }
 

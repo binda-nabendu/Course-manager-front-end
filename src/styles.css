@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/default.min.css';
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+  --black:#000;
+  --headerfoterh:60px;
+  --themcolor:#152036;
+  --them-color-lite: #0492C2;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+.img-responsive-warning{
+  position: fixed;
+  width: 200px;
+  height: auto;
+  bottom: 100px;
+  right: 60px;
+  transform: rotate(-30deg);
+}
+/* Footer */
+footer {
+  background-color: #152036;
+  text-align: center;
+  height: var(--headerfoterh);
+  padding: 25px 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+footer p {
+  margin-bottom: 0;
+;
+  color: #0399FF;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+footer p a,
+footer p a:hover {
+  color: #0399FF;
+}

@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getCourses() {
-    return this.http.get<any[]>('http://localhost:8080/courses');
-  }
+  private url: string = 'http://192.168.10.168:8080/';
+
+
+
 }

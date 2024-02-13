@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as alertify from "alertifyjs";
+import {Router} from "@angular/router";
+import {LoginService} from "../service/login.service";
 
 @Component({
   selector: 'app-login',
@@ -7,26 +9,48 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+  constructor(private router : Router, private service: LoginService) {
   }
+  private t: string = "hei ";
+  ngOnInit(): void {
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      // Submit the form data to the backend
-      const formData = this.loginForm.value;
-      console.log(formData);
-      // You can call your service to send data to the backend here
-    } else {
-      // Mark all form controls as touched to show validation errors
-      this.loginForm.markAllAsTouched();
+  }
+  respond:any;
+  checkValidate(userDetails:any){
+    if(userDetails.valid){
+      localStorage.clear();
+      this.service.proceedLogin(userDetails.value).subscribe(response => {
+        this.respond = response;
+        // console.log(response);
+
+        if(this.respond != null){
+          localStorage.setItem('Course_Manager_Token',this.respond.jwtToken);//here jwtToken is the key name of that token
+          console.log(this.service.getAllRoles());
+          let p = this.service.getAllRoles();
+
+          let is_admin = false;
+          for(let t = 0; t < p.length; t++){
+            const authority = p[t].authority;
+            if(authority == 'ROLE_ADMIN'){
+              is_admin = true
+            }
+          }
+          if (!is_admin)
+            this.router.navigate(["/student-dashboard"]);
+          else
+            this.router.navigate(["/admin-dashboard"]);
+        }else{
+          alertify.error("Fail to login")
+        }
+      }, error=>{
+        alertify.error("Fail to login");
+      });
     }
+    else
+      alertify.error("Fail to login")
+
+  }
+  goToRegPage(){
+    this.router.navigate(['public-dashboard/register-student']);
   }
 }
