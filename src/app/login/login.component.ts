@@ -50,7 +50,4 @@ export class LoginComponent implements OnInit {
       alertify.error("Fail to login")
 
   }
-  goToRegPage(){
-    this.router.navigate(['public-dashboard/register-student']);
-  }
 }

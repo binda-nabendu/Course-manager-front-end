@@ -25,11 +25,11 @@
             <li ><a routerLink="board"><span class="material-icons icon-style">dashboard</span>Dashboard</a></li>
           </ul>
           <ul class= "left-menu" >
-            <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>Student</a>
+            <li class="has-left-sub-menu"><a (click) = "enableSubMenu(); li1 = !li1"><span class="material-icons icon-style">group</span>User</a>
               <ul class="{{li1 ? 'left-sub-menu-show left-sub-menu': 'left-sub-menu'}}" >
-                <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">person_add</span>add new student</a></li>
-                <li><a routerLink='present-teacher'><span class="material-icons icon-style sub-icon">edit</span>update student</a></li>
-                <li><a routerLink='pending-teachers'><span class='material-icons icon-style sub-icon'>visibility</span>view a Student</a></li>
+                <li><a routerLink='add-user'><span class="material-icons icon-style sub-icon">person_add</span>add new</a></li>
+                <li><a routerLink='update-user'><span class="material-icons icon-style sub-icon">edit</span>update</a></li>
+                <li><a routerLink='view-user'><span class='material-icons icon-style sub-icon'>visibility</span>view a user</a></li>
               </ul>
             </li>
           </ul>

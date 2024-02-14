@@ -1,26 +1,69 @@
-<h2>User Registration</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" formControlName="username">
-    <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
-      Username is required
-    </div>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" formControlName="password">
-    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
-      Password is required and must be at least 6 characters long
-    </div>
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email">
-    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
-      Please enter a valid email address
-    </div>
-  </div>
-  <!-- Add more form controls as needed -->
-  <button type="submit" [disabled]="registerForm.invalid">Register</button>
-</form>
+<body>
+<mat-card>
+  <mat-card-title>Registration As Student/Admin</mat-card-title>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="regForm" (ngSubmit)="registerUser()">
+      <mat-form-field class="example-full-width full-width">
+        <mat-label class="name">ID</mat-label>
+        <input matInput placeholder="Id no" formControlName = "id">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width full-width">
+        <mat-label class="name ">Name</mat-label>
+        <input matInput placeholder="Your Full Name"  formControlName = "name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name"  formControlName = "firstName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label >Middle Name</mat-label>
+        <input matInput placeholder="Middle Name"  formControlName = "middleName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label >Last Name</mat-label>
+        <input matInput placeholder="Last Name"  formControlName = "lastName">
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Gander"  formControlName = "gender">
+        <mat-label>Gender</mat-label><br>
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+        <mat-radio-button value="3">Others</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="@email.com" formControlName = "email">
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Role"  formControlName = "role">
+        <mat-label>User Type</mat-label><br>
+        <mat-radio-button value="ADMIN">ADMIN</mat-radio-button>
+        <mat-radio-button value="STUDENT">STUDENT</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label>Contact Number(Give comma more then 1 contact)</mat-label>
+        <input matInput placeholder="+880" formControlName = "phone">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width full-width">
+        <mat-label>Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input  type='Password' matInput placeholder="Your Password" formControlName = "password">
+      </mat-form-field>
+
+      <button class ="signup" mat-raised-button color="primary"  type='submit' >create</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+</body>
+

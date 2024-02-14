@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
+import {User} from "../model/User";
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +74,18 @@ export class LoginService {
     }
 
     return roles;
+  }
+  token = localStorage.getItem(this.tokenName);
+  private headers:HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': "Bearer " + this.token
+  });
+  private requestOptions = {
+    headers: this.headers,
+    withCredentials: true, // Set this to true if you are using credentials
+  };
+  submitReg(user: User): Observable<User>{
+    console.log(this.token);
+    return this.httpClient.post<User>(this.url+"admin/create-new-user", JSON.stringify(user), this.requestOptions);
   }
 }
