@@ -1,6 +1,6 @@
-# Student Management System
+# Academic Course Management System
 
-The Student Management System is a web application designed to streamline and automate the process of managing student information and course registrations. It provides a user-friendly interface for authorized personnel to perform various tasks, including viewing student lists, creating new students, updating student information, managing course details, and configuring system settings.
+The Academic Course Management System is a web application designed to streamline and automate the process of managing student information and course registrations. It provides a user-friendly interface for authorized personnel to perform various tasks, including viewing student lists, creating new students, updating student information, managing course details, and configuring system settings.
 
 ## Features
 
@@ -50,19 +50,19 @@ The Student Management System is a web application designed to streamline and au
 ### Installation and Setup
 
 1. **Frontend:**
-   - Navigate to the `frontend` directory.
-   - Run `npm install` to install dependencies.
-   - Configure the API endpoint in the `environment.ts` file.
-   - Run `ng serve` to start the Angular development server.
+  - Navigate to the `frontend` directory.
+  - Run `npm install` to install dependencies.
+  - Configure the API endpoint in the `environment.ts` file.
+  - Run `ng serve` to start the Angular development server.
 
 2. **Backend:**
-   - Navigate to the `backend` directory.
-   - Configure the database connection in `application.properties`.
-   - Run the Spring Boot application.
+  - Navigate to the `backend` directory.
+  - Configure the database connection in `application.properties`.
+  - Run the Spring Boot application.
 
 3. **Access the Application:**
-   - Open the browser and navigate to `http://localhost:4200` for the Angular frontend.
-   - The Spring Boot backend will be running on `http://localhost:8080`.
+  - Open the browser and navigate to `http://localhost:4200` for the Angular frontend.
+  - The Spring Boot backend will be running on `http://localhost:8080`.
 
 ## Usage
 
@@ -74,3 +74,6 @@ The Student Management System is a web application designed to streamline and au
 
 - Nabendu Bikash Binda
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
