@@ -1,27 +1,76 @@
-# FontEnd
+# Student Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+The Student Management System is a web application designed to streamline and automate the process of managing student information and course registrations. It provides a user-friendly interface for authorized personnel to perform various tasks, including viewing student lists, creating new students, updating student information, managing course details, and configuring system settings.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Authorization:** Only authorized personnel can access the system, ensuring secure handling of sensitive student information.
 
-## Code scaffolding
+- **Student Management:**
+  - View the complete student list.
+  - Create new students with detailed information, including student ID, name (first name, middle name, last name), gender, multiple phone numbers, email addresses, educational information (degree, institute name, GPA, passing year), and address details.
+  - Update student profiles easily.
+  - Filter students by ID or name for quick access to specific student information.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Course Management:**
+  - Create and manage course information, including course code, title, and credits.
+  - Configurable page for setting the maximum number of credits or courses that can be assigned to a student.
 
-## Build
+- **Course Registration:**
+  - Authorize personnel can assign courses to students on the course registration page.
+  - Search for a specific student.
+  - Select preferred courses and save the assignments.
+  - Receive confirmation messages for successful assignments.
+  - Get error messages for any configuration-related issues.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+### Frontend (Angular)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular Framework
+- TypeScript
+- HTML/CSS
+- Angular Material for UI components
 
-## Running end-to-end tests
+### Backend (Spring Boot)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Spring Boot Framework
+- Java
+- Spring Data JPA for data persistence
+- Spring Security for authentication and authorization
 
-## Further help
+## Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+
+- Node.js and npm for Angular frontend
+- Java Development Kit (JDK) for Spring Boot backend
+- MySQL Database (or other databases as configured)
+
+### Installation and Setup
+
+1. **Frontend:**
+   - Navigate to the `frontend` directory.
+   - Run `npm install` to install dependencies.
+   - Configure the API endpoint in the `environment.ts` file.
+   - Run `ng serve` to start the Angular development server.
+
+2. **Backend:**
+   - Navigate to the `backend` directory.
+   - Configure the database connection in `application.properties`.
+   - Run the Spring Boot application.
+
+3. **Access the Application:**
+   - Open the browser and navigate to `http://localhost:4200` for the Angular frontend.
+   - The Spring Boot backend will be running on `http://localhost:8080`.
+
+## Usage
+
+- Log in with authorized credentials.
+- Explore the intuitive interface to manage students, courses, and system configurations.
+- Easily assign courses to students and receive real-time feedback on successful assignments or configuration errors.
+
+## Contributors
+
+- Nabendu Bikash Binda
+
